@@ -11,6 +11,7 @@ public class Rocket implements SpaceShip{
         this.rocketWeight = 0;
         this.weight = this.rocketWeight;
         this.maxCapacity = 0;
+        this.items = null;
 
     }
     public boolean launch() {
