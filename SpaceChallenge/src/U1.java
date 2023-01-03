@@ -1,16 +1,17 @@
 public class U1 extends Rocket{
     U1() {
         this.rocketWeight = 10000;
+        this.weight += this.rocketWeight;
         this.maxCapacity = 18000;
         this.cost = 100000000;
     }
 
     @Override
     public boolean launch() {
-        double cargoCarried = 1.0 * (this.maxCapacity - this.weight);
+        double cargoCarried = 1.0 * (this.weight - this.rocketWeight);
         double cargoLimit = 1.0 * (this.maxCapacity - this.rocketWeight);
         double chanceOfExpl = 0.05 * (cargoCarried/cargoLimit);
-        if (chanceOfExpl > Math.random()) {
+        if (chanceOfExpl >= Math.random()) {
             return false;
         } else {
             return true;
@@ -18,10 +19,10 @@ public class U1 extends Rocket{
     }
     @Override
     public boolean land() {
-        double cargoCarried = 1.0 * (this.maxCapacity - this.weight);
+        double cargoCarried = 1.0 * (this.weight - this.rocketWeight);
         double cargoLimit = 1.0 * (this.maxCapacity - this.rocketWeight);
         double chanceOfExpl = 0.01 * (cargoCarried/cargoLimit);
-        if (chanceOfExpl > Math.random()) {
+        if (chanceOfExpl >= Math.random()) {
             return false;
         } else {
             return true;
