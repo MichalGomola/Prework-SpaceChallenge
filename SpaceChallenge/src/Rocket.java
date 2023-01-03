@@ -9,9 +9,9 @@ public class Rocket implements SpaceShip{
 
     Rocket() {
         this.rocketWeight = 0;
-        this.weight = this.rocketWeight;
+        this.weight += this.rocketWeight;
         this.maxCapacity = 0;
-        this.items = null;
+        this.items = new ArrayList<Item>();
 
     }
     public boolean launch() {
